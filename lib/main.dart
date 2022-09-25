@@ -1,5 +1,3 @@
-
-
 import './common/file_exports.dart';
 
 void main() {
@@ -9,11 +7,9 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget  {
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return ChangeNotifierProvider(
       create: (_) => CouponsProvider(),
       child: MaterialApp(

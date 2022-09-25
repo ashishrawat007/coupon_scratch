@@ -1,8 +1,6 @@
-
 import 'package:coupon_scratch/common/file_exports.dart';
 
 class CouponsGridView extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     final media = MediaQuery.of(context).size;
@@ -18,19 +16,17 @@ class CouponsGridView extends StatelessWidget {
               crossAxisCount: 2,
               crossAxisSpacing: 15.0,
               mainAxisSpacing: 15.0,
-          childAspectRatio: 1/1
-          ),
-            itemBuilder: (BuildContext context, int index) {
+              childAspectRatio: 1 / 1),
+          itemBuilder: (BuildContext context, int index) {
             return IgnorePointer(
-              ignoring: provider.coupons[index].isScratched ? true: false,
+              ignoring: provider.coupons[index].isScratched ? true : false,
               child: InkWell(
                   onTap: () async {
                     await PhoneDialog(
-                        ctx: context,
-                        data: provider.coupons[index]);
+                        ctx: context, data: provider.coupons[index]);
                   },
                   child: provider.coupons[index].isScratched
-                      ? OpenedCoupon(value:provider.coupons[index].value)
+                      ? OpenedCoupon(value: provider.coupons[index].value)
                       : ClosedCoupon()),
             );
           },
@@ -39,6 +35,3 @@ class CouponsGridView extends StatelessWidget {
     );
   }
 }
-
-
-

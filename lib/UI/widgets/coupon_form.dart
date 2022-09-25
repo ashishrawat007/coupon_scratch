@@ -18,6 +18,7 @@ class _CouponFormState extends State<CouponForm> {
 
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<CouponsProvider>(context, listen: false);
@@ -38,8 +39,7 @@ class _CouponFormState extends State<CouponForm> {
               }
             },
             focusNode: couponFieldFocus,
-            decoration: const InputDecoration(
-                hintText: "Enter a Number"),
+            decoration: const InputDecoration(hintText: "Enter a Number"),
             keyboardType: TextInputType.number,
             controller: _fieldController,
           ),
@@ -57,7 +57,6 @@ class _CouponFormState extends State<CouponForm> {
               },
               child: Text("Generate Coupons")),
           SizedBox(height: h * 0.05),
-
         ],
       ),
     );

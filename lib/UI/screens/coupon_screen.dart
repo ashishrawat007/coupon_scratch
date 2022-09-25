@@ -14,7 +14,7 @@ class CouponScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/background.png"),
                 fit: BoxFit.cover,
@@ -24,7 +24,7 @@ class CouponScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               children: [
-                CouponForm(),
+                const CouponForm(),
                 Expanded(child: CouponsGridView())
               ],
             ),
@@ -37,7 +37,7 @@ class CouponScreen extends StatelessWidget {
   AppBar buildAppBar() {
     return AppBar(
       centerTitle: true,
-      title: Text("Home Screen"),
+      title: const Text("Home Screen"),
     );
   }
 }

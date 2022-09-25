@@ -1,4 +1,3 @@
-
 import 'package:coupon_scratch/common/file_exports.dart';
 
 Future<dynamic> PhoneDialog({ctx, required CouponModel data}) {
@@ -19,7 +18,7 @@ Future<dynamic> PhoneDialog({ctx, required CouponModel data}) {
             alignment: Alignment.topRight,
             children: [
               ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                borderRadius: BorderRadius.all(Radius.circular(20.0)),
                 child: Container(
                   width: width * 0.8,
                   height: height * 0.45,
@@ -39,7 +38,8 @@ Future<dynamic> PhoneDialog({ctx, required CouponModel data}) {
                           brushSize: 30,
                           threshold: 30,
                           onChange: (value) {
-                            final provider = Provider.of<CouponsProvider>(context,
+                            final provider = Provider.of<CouponsProvider>(
+                                context,
                                 listen: false);
 
                             if (value > 60.0) {
@@ -47,29 +47,28 @@ Future<dynamic> PhoneDialog({ctx, required CouponModel data}) {
                                   key: data.couponKey);
                             }
                           },
-                          color:
-                              data.isScratched ? Colors.transparent : Colors.red,
-                          child:
-                          Container(
-                            height: height * 0.23,
-                            width: width * 0.45,
-                            decoration: CommonStyles.openContainerDecoration,
-                            child: Center(
-                              child: RichText(
-                                textAlign: TextAlign.center,
-                                text: TextSpan(
-                                    text:
-                                    "₹ ${data.value} \n",
-                                    children: const [
-                                      TextSpan(
-                                        text: 'Cashback',
-                                      ),
-                                    ],
-                                    style: Theme.of(context).textTheme.subtitle1
+                          color: data.isScratched
+                              ? Colors.transparent
+                              : Colors.red,
+                          child: Container(
+                              height: height * 0.23,
+                              width: width * 0.45,
+                              decoration: CommonStyles.openContainerDecoration,
+                              child: Center(
+                                child: RichText(
+                                  textAlign: TextAlign.center,
+                                  text: TextSpan(
+                                      text: "₹ ${data.value} \n",
+                                      children: const [
+                                        TextSpan(
+                                          text: 'Cashback',
+                                        ),
+                                      ],
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .subtitle1),
                                 ),
-                              ),
-                            )
-                          ),
+                              )),
                         ),
                       ),
                     ],
@@ -77,7 +76,7 @@ Future<dynamic> PhoneDialog({ctx, required CouponModel data}) {
                 ),
               ),
               Container(
-                height: 30,
+                  height: 30,
                   width: 30,
                   decoration: BoxDecoration(
                       color: Colors.grey.shade400,

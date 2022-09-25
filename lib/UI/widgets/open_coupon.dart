@@ -1,7 +1,6 @@
 import 'package:coupon_scratch/common/file_exports.dart';
 
 class OpenedCoupon extends StatelessWidget {
-
   final value;
   OpenedCoupon({required this.value});
   @override
@@ -12,15 +11,13 @@ class OpenedCoupon extends StatelessWidget {
         child: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-              text:
-              "₹ ${value}  ",
+              text: "₹ ${value}  ",
               children: const [
                 TextSpan(
                   text: 'Cashback',
                 ),
               ],
-              style: Theme.of(context).textTheme.subtitle1
-          ),
+              style: Theme.of(context).textTheme.subtitle1),
         ),
       ),
     );
